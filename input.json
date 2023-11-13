@@ -1,0 +1,33 @@
+{
+"data":
+    {
+    "coverity":
+        {
+        "execution":
+            {
+            "path": "/home/vagrant/cov-analysis-linux64-2023.9.0/bin/coverity"
+            }
+        },
+    "srm":
+        {
+        "apiKey": "api-key:aGboLQDykpMzTmdN-RlTaMjBkS8OpcGGs96PsH3y",
+        "assessment":
+            {
+            "types":
+                [
+                "sast",
+                "sca"
+                ]
+            },
+        "branch":
+            {
+            "name": "master"
+            },
+        "project":
+            {
+            "name": "openssl"
+            },
+        "url": "http://srmserver.softflow.in:8080"
+        }
+    }
+}
