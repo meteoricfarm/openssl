@@ -5,12 +5,12 @@ capture:
     include:
       - c-family
   build:
-    clean-command: "make clean"
-    build-command: "make -j$(nproc)"
-  #compiler-configuration:
-  #  cov-configure:
-  #  - [ --template, --compiler, riscv64-unknown-linux-gnu-gcc, --comptype, gcc ]
-  #  - [ --template, --compiler, riscv64-unknown-linux-gnu-g++, --comptype, g++ ]
+    clean-command: "./Configure && make clean"
+    build-command: "./Configure && make -j$(nproc)"
+#  compiler-configuration:
+#    cov-configure:
+#    - [ --template, --compiler, riscv64-unknown-linux-gnu-gcc, --comptype, gcc ]
+#    - [ --template, --compiler, riscv64-unknown-linux-gnu-g++, --comptype, g++ ]
 analyze:
   c-cpp-fnptr: true
   constraint-fpp: true
