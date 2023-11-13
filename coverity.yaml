@@ -1,0 +1,32 @@
+# Coverity configuration file.
+# The schema is available here: <install-dir>/doc/configuration-schema.json
+capture:
+  languages:
+    include:
+      - c-family
+  build:
+    clean-command: "make clean"
+    build-command: "make -j$(nproc)"
+  #compiler-configuration:
+  #  cov-configure:
+  #  - [ --template, --compiler, riscv64-unknown-linux-gnu-gcc, --comptype, gcc ]
+  #  - [ --template, --compiler, riscv64-unknown-linux-gnu-g++, --comptype, g++ ]
+analyze:
+  c-cpp-fnptr: true
+  constraint-fpp: true
+  checkers:
+    c-family-security: true
+    concurrency: true
+  cov-analyze-args:
+    - --strip-path
+    - "/home/vagrant/workspace/openssl"
+#commit:
+#  connect:
+#    auth-key-file: "/home/vagrant/workspace/coverity-auth-key.txt"
+#    stream: openssl-master
+#    url: "http://coverity.softflow.in:8080"
+#srm:
+#  url: "https://srm.softflow.in:8443"
+#  project-name: openssl
+#  branch: master
+#  token-file: "/home/vagrant/workspace/srm-auth-key.txt"
